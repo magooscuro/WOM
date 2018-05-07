@@ -28,3 +28,7 @@ Route::resource('genero','GeneroController');
 Route::resource('artista','ArtistaController');
 
 Route::resource('tipopago','TipoPagoController');
+
+Route::resource('discografia','DiscografiaController');
+
+Route::resource('album','AlbumController');
