@@ -21,30 +21,26 @@
 
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h3 class="panel-title">Editar Genero</h3>
+                        <h3 class="panel-title">Nuevo Tipo de pago</h3>
                     </div>
                     <div class="panel-body">
                         <div class="table-container">
-                            <form method="POST" action="{{ route('genero.update',$genero->id) }}"  role="form">
+                            <form method="POST" action="{{ route('tipopago.store') }}"  role="form">
                                 {{ csrf_field() }}
-                                <input name="_method" type="hidden" value="PATCH">
                                 <div class="row">
                                     <div class="col-xs-6 col-sm-6 col-md-6">
                                         <div class="form-group">
-                                            <input type="text" name="genero" id="genero" class="form-control input-sm" value="{{$genero->genero}}">
+                                            <input type="text" name="tipo" id="tipo" class="form-control input-sm" placeholder="Nombre del Tipo de pago">
                                         </div>
                                     </div>
-
                                 </div>
-
-
 
 
                                 <div class="row">
 
                                     <div class="col-xs-12 col-sm-12 col-md-12">
-                                        <input type="submit"  value="Actualizar" class="btn btn-success btn-block">
-                                        <a href="{{ route('genero.index') }}" class="btn btn-info btn-block" >Atrás</a>
+                                        <input type="submit"  value="Guardar" class="btn btn-success btn-block">
+                                        <a href="{{ route('tipopago.index') }}" class="btn btn-info btn-block" >Atrás</a>
                                     </div>
 
                                 </div>

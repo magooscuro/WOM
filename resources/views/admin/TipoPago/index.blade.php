@@ -5,28 +5,28 @@
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
                     <div class="panel-body">
-                        <div class="pull-left"><h3>Lista Generos</h3></div>
+                        <div class="pull-left"><h3>Lista Tipos de Pago</h3></div>
                         <div class="pull-right">
                             <div class="btn-group">
-                                <a href="{{ route('genero.create') }}" class="btn btn-info" >Añadir Genero</a>
+                                <a href="{{ route('tipopago.create') }}" class="btn btn-info" >Añadir Tipo de pago</a>
                             </div>
                         </div>
                         <div class="table-container">
                             <table id="mytable" class="table table-bordred table-striped">
                                 <thead>
-                                <th>Genero</th>
+                                <th>Tipo</th>
                                 <th>Editar</th>
                                 <th>Eliminar</th>
                                 </thead>
                                 <tbody>
-                                @if($generos->count())
-                                    @foreach($generos as $genero)
+                                @if($pagos->count())
+                                    @foreach($pagos as $pago)
                                         <tr>
-                                            <td>{{$genero->genero}}</td>
+                                            <td>{{$pago->tipo}}</td>
 
-                                            <td><a class="btn btn-primary btn-xs" href="{{action('GeneroController@edit', $genero->id)}}" ><span class="glyphicon glyphicon-pencil"></span></a></td>
+                                            <td><a class="btn btn-primary btn-xs" href="{{action('TipoPagoController@edit', $pago->id)}}" ><span class="glyphicon glyphicon-pencil"></span></a></td>
                                             <td>
-                                                <form action="{{action('GeneroController@destroy', $genero->id)}}" method="post">
+                                                <form action="{{action('TipoPagoController@destroy', $pago->id)}}" method="post">
                                                     {{csrf_field()}}
                                                     <input name="_method" type="hidden" value="DELETE">
 
@@ -45,7 +45,7 @@
                             </table>
                         </div>
                     </div>
-                    {{ $generos->links() }}
+                    {{ $pagos->links() }}
                 </div>
             </div>
         </section>

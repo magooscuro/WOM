@@ -5,28 +5,33 @@
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
                     <div class="panel-body">
-                        <div class="pull-left"><h3>Lista Generos</h3></div>
+                        <div class="pull-left"><h3>Lista Artistas</h3></div>
                         <div class="pull-right">
                             <div class="btn-group">
-                                <a href="{{ route('genero.create') }}" class="btn btn-info" >Añadir Genero</a>
+                                <a href="{{ route('artista.create') }}" class="btn btn-info" >Añadir Artista</a>
                             </div>
                         </div>
                         <div class="table-container">
                             <table id="mytable" class="table table-bordred table-striped">
                                 <thead>
-                                <th>Genero</th>
+                                <th>Artistas</th>
+                                <th>Origen</th>
+                                <th>Inicio</th>
                                 <th>Editar</th>
                                 <th>Eliminar</th>
+
                                 </thead>
                                 <tbody>
-                                @if($generos->count())
-                                    @foreach($generos as $genero)
+                                @if($artistas->count())
+                                    @foreach($artistas as $artista)
                                         <tr>
-                                            <td>{{$genero->genero}}</td>
+                                            <td>{{$artista->nombre}}</td>
+                                            <td>{{$artista->origen}}</td>
+                                            <td>{{$artista->inicio}}</td>
 
-                                            <td><a class="btn btn-primary btn-xs" href="{{action('GeneroController@edit', $genero->id)}}" ><span class="glyphicon glyphicon-pencil"></span></a></td>
+                                            <td><a class="btn btn-primary btn-xs" href="{{action('ArtistaController@edit', $artista->id)}}" ><span class="glyphicon glyphicon-pencil"></span></a></td>
                                             <td>
-                                                <form action="{{action('GeneroController@destroy', $genero->id)}}" method="post">
+                                                <form action="{{action('ArtistaController@destroy', $artista->id)}}" method="post">
                                                     {{csrf_field()}}
                                                     <input name="_method" type="hidden" value="DELETE">
 
@@ -45,7 +50,7 @@
                             </table>
                         </div>
                     </div>
-                    {{ $generos->links() }}
+                    {{ $artistas->links() }}
                 </div>
             </div>
         </section>

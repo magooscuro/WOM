@@ -24,3 +24,7 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('genero','GeneroController');
+
+Route::resource('artista','ArtistaController');
+
+Route::resource('tipopago','TipoPagoController');

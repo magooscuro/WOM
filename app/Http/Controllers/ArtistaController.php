@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Genero;
+use App\Artista;
 use Illuminate\Http\Request;
 
-class GeneroController extends Controller
+class ArtistaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +15,8 @@ class GeneroController extends Controller
     public function index()
     {
         //
-        $generos=Genero::orderBy('id','DESC')->paginate(3);
-        return view('admin.Genero.index',compact('generos'));
+        $artistas=Artista::orderBy('id','DESC')->paginate(5);
+        return view('admin.Artista.index',compact('artistas'));
     }
 
     /**
@@ -27,7 +27,7 @@ class GeneroController extends Controller
     public function create()
     {
         //
-        return view('admin.Genero.create');
+        return view('admin.Artista.create');
     }
 
     /**
@@ -39,9 +39,10 @@ class GeneroController extends Controller
     public function store(Request $request)
     {
         //
-        $this->validate($request,['genero'=>'required']);
-        Genero::create($request->all());
-        return redirect()->route('genero.create')->with('success','Registro creado satisfacoriamente');
+        $this->validate($request,['nombre'=>'required', 'origen'=>'required', 'inicio'=>'required']);
+        Artista::create($request->all());
+        return redirect()->route('artista.index')->with('success','Registro creado satisfactoriamente');
+
     }
 
     /**
@@ -53,8 +54,8 @@ class GeneroController extends Controller
     public function show($id)
     {
         //
-        $generos=Genero::find($id);
-        return view('admin.Genero.index',compact('generos'));
+        $artistas = Artista::find($id);
+        return view('admin.Artista.index',compact('artistas'));
     }
 
     /**
@@ -66,8 +67,8 @@ class GeneroController extends Controller
     public function edit($id)
     {
         //
-        $genero=Genero::find($id);
-        return view('admin.Genero.edit',compact('genero'));
+        $artista = Artista::find($id);
+        return view('admin.Artista.edit',compact('artista'));
     }
 
     /**
@@ -80,9 +81,11 @@ class GeneroController extends Controller
     public function update(Request $request, $id)
     {
         //
-        $this->validate($request,['genero'=>'required']);
-        genero::find($id)->update($request->all());
-        return redirect()->route('genero.index')->with('success','Registro actualizado satisfacoriamente');
+        $this->validate($request,['nombre'=>'required', 'origen'=>'required', 'inicio'=>'required']);
+
+        Artista::find($id)->update($request->all());
+        return redirect()->route('artista.index')->with('success','Registro actualizado satisfactoriamente');
+
     }
 
     /**
@@ -94,7 +97,7 @@ class GeneroController extends Controller
     public function destroy($id)
     {
         //
-        Genero::find($id)->delete();
-        return redirect()->route('genero.index')->with('success','Registro eliminado satisfacoriamente');
+        Artista::find($id)->delete();
+        return redirect()->route('artista.index')->with('success','Registro eliminado satisfactoriamente');
     }
 }
