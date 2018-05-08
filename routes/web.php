@@ -32,3 +32,5 @@ Route::resource('tipopago','TipoPagoController');
 Route::resource('discografia','DiscografiaController');
 
 Route::resource('album','AlbumController');
+
+Route::resource('cupon','CuponController');
