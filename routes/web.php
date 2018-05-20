@@ -21,7 +21,7 @@
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/', 'HomeController@index')->name('home');
 
 Route::resource('genero','GeneroController');
 
@@ -34,3 +34,5 @@ Route::resource('discografia','DiscografiaController');
 Route::resource('album','AlbumController');
 
 Route::resource('cupon','CuponController');
+
+Route::resource('detallecompra','DetalleCompraController');
