@@ -4,6 +4,7 @@ namespace App\Exceptions;
 
 use Exception;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use Illuminate\Validation\ValidationException;
 
 class Handler extends ExceptionHandler
 {
@@ -31,7 +32,7 @@ class Handler extends ExceptionHandler
      *
      * This is a great spot to send exceptions to Sentry, Bugsnag, etc.
      *
-     * @param  \Exception  $exception
+     * / @param  \Exception  $exception
      * @return void
      */
     public function report(Exception $exception)
@@ -48,6 +49,18 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $exception)
     {
+        /*if($request->exceptsJson()){
+
+            if($exception instanceof ValidationException){
+                return response()->json([
+                    'message' => $exception->getMessage(),
+                    'errors' => $exception->validator->errors()
+                ]);
+            }
+
+        }*/
+
+
         return parent::render($request, $exception);
     }
 }
