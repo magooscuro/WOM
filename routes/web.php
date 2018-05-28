@@ -25,6 +25,8 @@ Route::get('/', 'HomeController@index')->name('home');
 
 Route::resource('genero','GeneroController');
 
+Route::resource('home','GeneroController');
+
 Route::resource('artista','ArtistaController');
 
 Route::resource('tipopago','TipoPagoController');
@@ -36,3 +38,5 @@ Route::resource('album','AlbumController');
 Route::resource('cupon','CuponController');
 
 Route::resource('detallecompra','DetalleCompraController');
+
+
