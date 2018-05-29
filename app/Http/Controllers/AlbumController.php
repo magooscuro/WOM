@@ -48,6 +48,8 @@ class AlbumController extends Controller
         //
         $this->validate($request,['nombre'=>'required', 'publicacion'=>'required', 'precio'=>'required', 'img'=>'required|image', 'id_discografia'=>'required', 'id_artista'=>'required', 'id_genero'=>'required']);
         $nombre = $request->file('img')->store('public/Albums');
+        $nombre = explode('/',$nombre);
+        $nombre = $nombre[2];
         $album = ['nombre'=>$request->nombre, 'publicacion'=>$request->publicacion, 'precio'=>$request->precio, 'img'=>$nombre, 'id_discografia'=>$request->id_discografia, 'id_artista'=>$request->id_artista, 'id_genero'=>$request->id_genero];
         Album::create($album);
         return redirect()->route('album.index')->with('success','Registro creado satisfactoriamente');
@@ -96,6 +98,8 @@ class AlbumController extends Controller
         if($request->hasFile('img')){
             Storage::delete(Album::find($id)->img);
             $nombre = $request->file('img')->store('public/Albums');
+            $nombre = explode('/',$nombre);
+            $nombre = $nombre[2];
             $album = ['nombre'=>$request->nombre, 'publicacion'=>$request->publicacion, 'precio'=>$request->precio, 'img'=>$nombre, 'id_discografia'=>$request->id_discografia, 'id_artista'=>$request->id_artista, 'id_genero'=>$request->id_genero];
         }else{
             $album = ['nombre'=>$request->nombre, 'publicacion'=>$request->publicacion, 'precio'=>$request->precio, 'id_discografia'=>$request->id_discografia, 'id_artista'=>$request->id_artista, 'id_genero'=>$request->id_genero];

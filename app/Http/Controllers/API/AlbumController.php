@@ -53,7 +53,7 @@ class AlbumController extends Controller
     public function show($id)
     {
         //
-        $album = Album::find($id);
+        $album = DB::select('select * from albumcompleto where id='.$id);
         return response()->json($album);
     }
 
