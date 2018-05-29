@@ -241,19 +241,14 @@ desired effect
             <ul class="sidebar-menu" data-widget="tree">
                 <li class="header">HEADER</li>
                 <!-- Optionally, you can add icons to the links -->
-                <li class="active"><a href="#"><i class="fa fa-link"></i> <span>Link</span></a></li>
-                <li><a href="#"><i class="fa fa-link"></i> <span>Another Link</span></a></li>
-                <li class="treeview">
-                    <a href="#"><i class="fa fa-link"></i> <span>Multilevel</span>
-                        <span class="pull-right-container">
-                <i class="fa fa-angle-left pull-right"></i>
-              </span>
-                    </a>
-                    <ul class="treeview-menu">
-                        <li><a href="#">Link in level 2</a></li>
-                        <li><a href="#">Link in level 2</a></li>
-                    </ul>
-                </li>
+                <li><a href="{{route('genero.index')}}"><i class="fa fa-link"></i> <span>Genero</span></a></li>
+                <li><a href="{{route('album.index')}}"><i class="fa fa-link"></i> <span>Album</span></a></li>
+                <li><a href="{{route('artista.index')}}"><i class="fa fa-link"></i> <span>Artista</span></a></li>
+                <li><a href="{{route('discografia.index')}}"><i class="fa fa-link"></i> <span>Discografia</span></a></li>
+                <li><a href="{{route('cupon.index')}}"><i class="fa fa-link"></i> <span>Cupon</span></a></li>
+                <li><a href="{{route('tipopago.index')}}"><i class="fa fa-link"></i> <span>Tipo Pago</span></a></li>
+                <li><a href="{{route('user.index')}}"><i class="fa fa-link"></i> <span>Usiarios</span></a></li>
+
             </ul>
             <!-- /.sidebar-menu -->
         </section>

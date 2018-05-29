@@ -19,6 +19,16 @@ class UserTableSeeder extends Seeder
         $user->name = 'User';
         $user->email = 'user@example.com';
         $user->password = bcrypt('secret');
+        $user->apaterno = 'UserPaterno';
+        $user->amaterno = 'UserMaterno';
+        $user->fnacimiento = '10/10/2015';
+        $user->direccion = 'direccion';
+        $user->estado = 'estado';
+        $user->municipio = 'municipio';
+        $user->colonia = 'colonia';
+        $user->telefono = '417417';
+
+
         $user->save();
 
         $user->roles()->attach($role_user);
@@ -28,5 +38,15 @@ class UserTableSeeder extends Seeder
         $user->password = bcrypt('secret');
         $user->save();
         $user->roles()->attach($role_admin);
+        $user->apaterno = 'UserPaterno';
+        $user->amaterno = 'UserMaterno';
+        $user->fnacimiento = '10/10/2015';
+        $user->direccion = 'direccion';
+        $user->estado = 'estado';
+        $user->municipio = 'municipio';
+        $user->colonia = 'colonia';
+        $user->telefono = '417417';
+
+        $user->save();
     }
 }
