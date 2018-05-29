@@ -39,4 +39,6 @@ Route::resource('cupon','CuponController');
 
 Route::resource('detallecompra','DetalleCompraController');
 
+Route::resource('user','UserController');
+
 

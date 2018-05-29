@@ -5,41 +5,51 @@
             <div class="col-md-12">
                 <div class="panel panel-default">
                     <div class="panel-body">
-                        <div class="pull-left"><h3>Lista Albums</h3></div>
+                        <div class="pull-left"><h3>Lista Usuarios</h3></div>
                         <div class="pull-right">
                             <div class="btn-group">
-                                <a href="{{ route('album.create') }}" class="btn btn-info" >Añadir Album</a>
+                                <a href="{{ route('user.create') }}" class="btn btn-info" >Añadir User</a>
                             </div>
                         </div>
                         <div class="table-container">
                             <table id="mytable" class="table table-bordred table-striped">
                                 <thead>
                                 <th>Nombre</th>
-                                <th>Fecha Publicacion</th>
-                                <th>Precio</th>
-                                <th>Imagen</th>
-                                <th>discografia</th>
-                                <th>Artista</th>
-                                <th>Genero</th>
+                                <th>Apellido Paterno</th>
+                                <th>Apellido Materno</th>
+                                <th>Email</th>
+
+                                <th>Fecha Nacimiento</th>
+                                <th>Direccion</th>
+                                <th>Estado</th>
+                                <th>Municipio</th>
+                                <th>Colonia</th>
+                                <th>Telefono</th>
+
                                 <th>Editar</th>
                                 <th>Eliminar</th>
 
                                 </thead>
                                 <tbody>
-                                @if($albums->count())
-                                    @foreach($albums as $album)
+                                @if($users->count())
+                                    @foreach($users as $user)
                                         <tr>
-                                            <td>{{$album->nombre}}</td>
-                                            <td>{{$album->publicacion}}</td>
-                                            <td>{{$album->precio}}</td>
-                                            <td><img width="150px" src="{{ Storage::url($album->img) }}"></td>
-                                            <td>{{$album->discografia->nombre}}</td>
-                                            <td>{{$album->artista->nombre}}</td>
-                                            <td>{{$album->genero->genero}}</td>
+                                            <td>{{$user->name}}</td>
+                                            <td>{{$user->apaterno}}</td>
+                                            <td>{{$user->amaterno}}</td>
+                                            <td>{{$user->email}}</td>
 
-                                            <td><a class="btn btn-primary btn-xs" href="{{action('AlbumController@edit', $album->id)}}" ><span class="glyphicon glyphicon-pencil"></span></a></td>
+                                            <td>{{$user->fnacimiento}}</td>
+                                            <td>{{$user->direccion}}</td>
+                                            <td>{{$user->estado}}</td>
+
+                                            <td>{{$user->municipio}}</td>
+                                            <td>{{$user->colonia}}</td>
+                                            <td>{{$user->telefono}}</td>
+
+                                            <td><a class="btn btn-primary btn-xs" href="{{action('UserController@edit', $user->id)}}" ><span class="glyphicon glyphicon-pencil"></span></a></td>
                                             <td>
-                                                <form action="{{action('AlbumController@destroy', $album->id)}}" method="post">
+                                                <form action="{{action('UserController@destroy', $user->id)}}" method="post">
                                                     {{csrf_field()}}
                                                     <input name="_method" type="hidden" value="DELETE">
 
@@ -58,7 +68,7 @@
                             </table>
                         </div>
                     </div>
-                    {{ $albums->links() }}
+                    {{ $users->links() }}
                 </div>
             </div>
         </section>
