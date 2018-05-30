@@ -43,4 +43,6 @@ Route::resource('user','UserController');
 
 Route::resource('reporte','ReporteController');
 
+Route:: resource('compra','CompraController');
+
 

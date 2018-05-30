@@ -249,6 +249,7 @@ desired effect
                 <li><a href="{{route('tipopago.index')}}"><i class="fa fa-link"></i> <span>Tipo Pago</span></a></li>
                 <li><a href="{{route('user.index')}}"><i class="fa fa-link"></i> <span>Usiarios</span></a></li>
                 <li><a href="{{route('reporte.index')}}"><i class="fa fa-link"></i> <span>Reportes</span></a></li>
+                <li><a href="{{route('compra.index')}}"><i class="fa fa-link"></i> <span>Compras</span></a></li>
 
             </ul>
             <!-- /.sidebar-menu -->
