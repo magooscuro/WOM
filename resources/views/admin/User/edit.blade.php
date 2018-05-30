@@ -34,7 +34,7 @@
 
                                             <input type="text" name="name" id="name" class="form-control input-sm" value="{{$user->name}}">
                                             <input type="text" name="apaterno" id="apaterno" class="form-control input-sm" placeholder="Apellido paterno " value="{{$user->apaterno}}">
-                                            <input type="text" name="amaterno" id="amaterno" class="form-control input-sm" placeholder="Apellido materno "value="{{$user->amaterno}}">
+                |                            <input type="text" name="amaterno" id="amaterno" class="form-control input-sm" placeholder="Apellido materno "value="{{$user->amaterno}}">
                                             <input type="email" name="email" id="email" class="form-control input-sm" placeholder="Email" value="{{$user->email}}">
                                             <input type="date" name="fnacimiento" id="fnacimiento" class="form-control input-sm"/>
                                             <input type="text" name="direccion" id="direccion" class="form-control input-sm" placeholder="Direccion" value="{{$user->direccion}}">
