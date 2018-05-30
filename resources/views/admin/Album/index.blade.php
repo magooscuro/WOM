@@ -32,7 +32,7 @@
                                             <td>{{$album->nombre}}</td>
                                             <td>{{$album->publicacion}}</td>
                                             <td>{{$album->precio}}</td>
-                                            <td><img width="150px" src="{{ 'http://192.168.1.72:8000/storage/Albums/'.$album->img }}"></td>
+                                            <td><img width="150px" src="{{ 'http://192.168.43.198:8000/storage/Albums/'.$album->img }}"></td>
                                             <td>{{$album->discografia->nombre}}</td>
                                             <td>{{$album->artista->nombre}}</td>
                                             <td>{{$album->genero->genero}}</td>

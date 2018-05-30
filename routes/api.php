@@ -23,10 +23,15 @@ Route::post('login', 'API\Auth\LoginController@login');
 
 Route::post('refresh', 'API\Auth\LoginController@refresh');
 
+Route::get('iduser','API\IdUserController@iduser');
+
 Route::resource('genero','API\GeneroController',['only'=>[
     'index', 'store', 'show', 'update', 'destroy']]);
 
 Route::resource('album','API\AlbumController',['only'=>[
+    'index', 'store', 'show', 'update', 'destroy']]);
+
+Route::resource('carrito','API\CarritoController',['only'=>[
     'index', 'store', 'show', 'update', 'destroy']]);
 
 
